@@ -1,6 +1,10 @@
-CXX		= g++
-PROG	= predictor
+.PHONY: all debug
 
-OBJD	= obj/
-DEPS	= 
+
+all:
+	cd src && make
+
+debug: all
+	cd src && gdb prog
+	
 

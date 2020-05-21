@@ -2,20 +2,26 @@
 #define TRIE_H_INCLUDED
 
 
-    struct Nodo {
-        char valor;
-        struct Nodo** hojas;
+    #include <string>
+
+    // Desde la 'a' hasta la 'z', sin contar ñ, más '$'
+    #define NUM_LETTERS 27
+    #define EOS         '$'
+    #define AS_INDEX(c) c - 'a'
+
+    struct TrieNode {
+        char c;
+        struct TrieNode* children[NUM_LETTERS];
     };
     
-    #define TO_INDEX(c) c - 'a'
-
     class Trie {
         private:
-            struct Nodo *root;
+            struct TrieNode* root;
         public:
             Trie();
             ~Trie();
-            void add_palabra(char*);
+            void add_word(std::string);
+            bool search(std::string);
     };
 
 #endif

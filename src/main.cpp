@@ -1,12 +1,16 @@
+#include "Trie/Trie.h"
+
 #include <iostream>
-#include <fstream>
 
-
-int main(int argc, char* argv[]) {
-    if (argc != 5) {
-        std::cerr << "Llamadas al programa deben ser de la forma:" << std::endl;
-        std::cerr << "\t predictor <diccionario> <cadenas> <resultados> <k>" << std::endl;
-        return 1;
+  
+int main() 
+{ 
+    Trie t = Trie();
+    t.add_word("hello");
+    if (t.search("hello")) {
+        std::cout << "Hello world" << std::endl;
+    } else {
+        std::cout << "Goodbye cruel world" << std::endl;
     }
-    return 0;
-}
+    return 0; 
+} 
