@@ -50,3 +50,14 @@ bool Trie::search(std::string word) {
     }
     return (aux != NULL && aux->children[NUM_LETTERS - 1] != NULL);
 }
+
+bool Trie::isLastNode(){
+    struct TrieNode* aux= this->root;
+
+    for(int i=0;i< word.length();i++) {
+        if(aux->children[i]){
+            return true;
+        }
+    }
+    return false;
+}

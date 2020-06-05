@@ -22,6 +22,7 @@
             ~Trie();
             void add_word(std::string);
             bool search(std::string);
+            bool isLastNode();
     };
 
 #endif
