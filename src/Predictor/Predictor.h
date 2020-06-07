@@ -1,11 +1,11 @@
-#include "Trie.h"
+#include "../Trie/Trie.h"
 
 class Predictor{
 	private:
 		struct TrieNode* root;
-		Trie t;
+		Trie *t;
 	public:
 		Predictor();
 		~Predictor();
-		void suggestions(string prefix);
+		void suggestions(std::string prefix);
 };
