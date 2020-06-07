@@ -9,7 +9,7 @@ class Controlador {
     private:
         Trie* trie;
     public:
-        Controlador(std::string);
+        Controlador(char*);
         ~Controlador();
 };
 
