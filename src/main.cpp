@@ -1,16 +1,8 @@
-#include "Trie/Trie.h"
-
-#include <iostream>
-
+#include "Controlador/Controlador.h"
   
-int main() 
-{ 
-    Trie t = Trie();
-    t.add_word("hello");
-    if (t.search("hello")) {
-        std::cout << "Hello world" << std::endl;
-    } else {
-        std::cout << "Goodbye cruel world" << std::endl;
+int main(int argc, char* argv[]) {
+    if (argc >= 1) {
+        Controlador c(argv[1]);
     }
     return 0; 
 } 
