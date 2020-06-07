@@ -1,6 +1,6 @@
 PROG		= predictor
 CXXFLAGS	= -g -O0
-DEPS		= main.o Trie/Trie.o
+DEPS		= main.o Trie/Trie.o Controlador/Controlador.o
 
 %.o: %.cpp
 	$(CXX) -c $< -o $@
