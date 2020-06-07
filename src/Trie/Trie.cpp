@@ -54,14 +54,15 @@ bool Trie::search(std::string word) {
 
 bool Trie::isLastNode(){
     struct TrieNode* aux= this->root;
-/*
+
     for(int i=0;i< word.length();i++) {
         if(aux->children[i]){
             return true;
         }
-    }*/
+    }
     return false;
 }
+
 char Trie::getNode(){
     return this->root;
 }
