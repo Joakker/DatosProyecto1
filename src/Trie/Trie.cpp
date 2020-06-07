@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 
+using namespace std;
 
 struct TrieNode* newNode(char c) {
     struct TrieNode* aux = (struct TrieNode*) malloc(sizeof(struct TrieNode));
@@ -60,4 +61,7 @@ bool Trie::isLastNode(){
         }
     }
     return false;
+}
+char Trie::getNode(){
+    return this->root;
 }
