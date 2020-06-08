@@ -5,8 +5,8 @@
 
 using namespace std;
 
-Predictor::Predictor(){
-	this->t = new Trie();
+Predictor::Predictor(Trie t){
+	this->t = t;
 	this->root = this->t->getNode(); 
 }
 
