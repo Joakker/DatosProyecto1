@@ -24,7 +24,7 @@
             
             void add_word(std::string, int);
             bool search(std::string);
-            bool isLastNode();
+            bool isLastNode(struct TrieNode* root);
             struct TrieNode* getNode();
     };
 
