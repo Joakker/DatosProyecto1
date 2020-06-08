@@ -13,6 +13,7 @@
         char c;
         int frecuencia;
         struct TrieNode* children[NUM_LETTERS];
+        int frequency;
     };
     
     class Trie {
