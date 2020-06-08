@@ -11,6 +11,7 @@
 
     struct TrieNode {
         char c;
+        int frecuencia;
         struct TrieNode* children[NUM_LETTERS];
     };
     
@@ -21,7 +22,7 @@
             Trie();
             ~Trie();
             
-            void add_word(std::string);
+            void add_word(std::string, int);
             bool search(std::string);
             bool isLastNode();
             struct TrieNode* getNode();
