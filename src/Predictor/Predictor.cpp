@@ -5,14 +5,13 @@
 
 using namespace std;
 
-Predictor::Predictor(Trie t){
+Predictor::Predictor(Trie* t){
 	this->t = t;
 	this->root = this->t->getNode(); 
 }
 
 Predictor::~Predictor(){
 	delete root;
-	delete t;
 }
 //funcion recursiva para imprimir coincidencias con el prefijo especificado
 void Predictor::suggestions(string prefix){

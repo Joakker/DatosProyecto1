@@ -10,13 +10,13 @@ Controlador::Controlador(std::string diccionario) {
     trie = new Trie();
     //predictor = new Predictor();
     while (input >> palabra >> n) {
-        trie->add_word(palabra);
+        trie->add_word(palabra, n);
     }
 }
 
 
 Controlador::~Controlador() {
-    delete predictor;
+   // delete predictor;
 }
 
 

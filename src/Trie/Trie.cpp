@@ -8,6 +8,7 @@ using namespace std;
 struct TrieNode* newNode(char c) {
     struct TrieNode* aux = (struct TrieNode*) malloc(sizeof(struct TrieNode));
     aux->c = c;
+    aux->frequency = 0;
     
     for (int i = 0; i < NUM_LETTERS; i++)
         aux->children[i] = NULL;
@@ -24,7 +25,7 @@ Trie::~Trie() {
     free(root);
 }
 
-void Trie::add_word(std::string word) {
+void Trie::add_word(std::string word, int n) {
     struct TrieNode* aux = this->root;
     
     for (int i = 0; i < word.length(); i++) {
@@ -34,6 +35,7 @@ void Trie::add_word(std::string word) {
             aux->children[index] = newNode(word[i]);
         }
         aux = aux->children[index];
+        aux->frequency += n;
     }
     aux->children[NUM_LETTERS - 1] = newNode(EOS);
 }
