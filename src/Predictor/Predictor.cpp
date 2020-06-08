@@ -36,4 +36,27 @@ void Predictor::suggestions(string prefix){
 		}
 	}
 }
+int Predictor::printSuggestions(string prefix){
+	struct TrieNode* aux = this->root;
+	//se verifica si el prefijo esta presente, si no lo esta se retorna 0
+	for(int i=0;i<prefix.length();i++){
+		int index = AS_INDEX(prefix[i]);
+		if(!aux->children[index]){
+			return 0;
+		}
+		aux =aux->children[index];
+	}
+	bool isLast= isLastNode(aux);
+	//si la palabra esta presente, pero no hay más coincidencias, se retorna -1
+	if(aux->children[26]==EOS&&isLast){
+		cout<<prefix<<endl;
+		return -1;
+	}
+	//si el prefijo esta presente y tiene más nodos debajo, se retorna 1, y se llama a la funcion suggestions
+	if(!isLast){
+		suggestions(prefix);
+		return 1;
+	}
+
+}
 
