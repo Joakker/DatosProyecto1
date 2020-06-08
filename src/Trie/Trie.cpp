@@ -21,7 +21,7 @@ Trie::Trie() {
 }
 
 Trie::~Trie() {
-    free(this->root);
+    free(root);
 }
 
 void Trie::add_word(std::string word) {

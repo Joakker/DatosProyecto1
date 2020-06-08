@@ -9,6 +9,7 @@ Predictor::Predictor(){
 	this->t = new Trie();
 	this->root = this->t->getNode(); 
 }
+
 Predictor::~Predictor(){
 	delete t;
 }
