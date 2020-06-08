@@ -8,7 +8,7 @@ Controlador::Controlador(std::string diccionario) {
     std::string palabra;
     int n;
     trie = new Trie();
-    predictor = new Predictor();
+    //predictor = new Predictor();
     while (input >> palabra >> n) {
         trie->add_word(palabra);
     }
