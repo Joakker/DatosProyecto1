@@ -20,7 +20,7 @@ void Predictor::suggestions(string prefix){
 		cout<<prefix<<endl;
 	}
 	//en caso de que no queden nodos hijos correspondientes al prefijo se termina el metodo
-	if(t->isLastNode()){
+	if(t->isLastNode(this->root)){
 		return;
 	}
 	//
@@ -46,7 +46,7 @@ int Predictor::printSuggestions(string prefix){
 		}
 		aux =aux->children[index];
 	}
-	bool isLast= isLastNode(aux);
+	bool isLast= t->isLastNode(aux);
 	//si la palabra esta presente, pero no hay más coincidencias, se retorna -1
 	if(aux->children[26]==EOS&&isLast){
 		cout<<prefix<<endl;
