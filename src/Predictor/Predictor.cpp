@@ -17,7 +17,7 @@ Predictor::~Predictor(){
 //funcion recursiva para imprimir coincidencias con el prefijo especificado
 void Predictor::suggestions(string prefix){
 	//se comprueba si es el final de la palabra y se imprime en caso de que corresponda al prefijo
-	if(this->root->c==EOS){
+	if(this->root->children[26]->c==EOS){
 		cout<<prefix<<endl;
 	}
 	//en caso de que no queden nodos hijos correspondientes al prefijo se termina el metodo
