@@ -12,6 +12,7 @@
     struct TrieNode {
         char c;
         struct TrieNode* children[NUM_LETTERS];
+        int frequency;
     };
     
     class Trie {
