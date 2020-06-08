@@ -5,7 +5,7 @@ class Predictor{
 		struct TrieNode* root;
 		Trie *t;
 	public:
-		Predictor();
+		Predictor(Trie t);
 		~Predictor();
 		void suggestions(std::string prefix);
 };
