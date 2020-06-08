@@ -28,7 +28,7 @@ void Predictor::suggestions(string prefix){
 		//en caso de haber un hijo en la posicion i
 		if(this->root->children[i]){
 			//se agrega el caracter correspondiente del hijo, en base al codigo ASCII
-			prefix.push_back(97+i);
+			prefix.push_back('a'+i);
 			//se recurre nuevamente a la función
 			suggestions(prefix);
 			//se elimina el ultimo caracter
@@ -36,3 +36,4 @@ void Predictor::suggestions(string prefix){
 		}
 	}
 }
+
