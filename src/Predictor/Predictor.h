@@ -4,6 +4,7 @@ class Predictor{
 		struct TrieNode* root;
 		Trie *t;
 		std::vector<std::pair<int,std::string>> v;
+		int aux;
 	public:
 		Predictor(Trie* t);
 		~Predictor();
