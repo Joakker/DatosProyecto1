@@ -14,7 +14,7 @@ Predictor::~Predictor(){
 	delete root;
 }
 //funcion recursiva para imprimir coincidencias con el prefijo especificado
-void Predictor::suggestions(string prefix){
+void Predictor::suggestions(std::string prefix){
 	//se comprueba si es el final de la palabra y se imprime en caso de que corresponda al prefijo
 	if(this->root->children[26]->c==EOS){
 		cout<<prefix<<endl;
@@ -36,7 +36,7 @@ void Predictor::suggestions(string prefix){
 		}
 	}
 }
-int Predictor::printSuggestions(string prefix){
+int Predictor::printSuggestions(std::string prefix){
 	struct TrieNode* aux = this->root;
 	//se verifica si el prefijo esta presente, si no lo esta se retorna 0
 	for(int i=0;i<prefix.length();i++){
