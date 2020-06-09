@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -25,7 +26,7 @@ void Predictor::suggestions(std::string prefix,int k){
 	if(t->isLastNode(this->root)){
 		sort(v.begin(),v.end());
 		for(int i=0;i<k;i++){
-			cout<<v[(v.size()-1)-i].second()<<endl;
+			cout<<v[(v.size()-1)-i].second<<endl;
 		}
 		return;
 	}
@@ -37,7 +38,7 @@ void Predictor::suggestions(std::string prefix,int k){
 			prefix.push_back('a'+i);
 			aux+=this->root->children[i]->frequency;
 			//se recurre nuevamente a la función
-			suggestions(prefix);
+			suggestions(prefix,k);
 			//se elimina el ultimo caracter
 			prefix.pop_back();
 			aux-=this->root->children[i]->frequency;
@@ -56,7 +57,7 @@ int Predictor::printSuggestions(std::string prefix,int k){
 	}
 	bool isLast= t->isLastNode(aux);
 	//si la palabra esta presente, pero no hay más coincidencias, se retorna -1
-	if(aux->children[26]==EOS&&isLast){
+	if(aux->children[26]->c==EOS&&isLast){
 		cout<<prefix<<endl;
 		return -1;
 	}
