@@ -11,7 +11,13 @@ Predictor::Predictor(Trie* t){
 	this->root = this->t->getNode();
 	aux=0; 
 }
-
+bool cmp(pair<int,string> a1, pair<int,string> a2) {
+	if (a1.first > a2.first) {
+		return true;
+	} else {
+		return false;
+	}
+}
 Predictor::~Predictor(){
 	delete root;
 }
