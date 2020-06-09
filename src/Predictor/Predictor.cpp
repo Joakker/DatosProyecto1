@@ -18,7 +18,7 @@ Predictor::~Predictor(){
 void Predictor::suggestions(std::string prefix,int k){
 	//se comprueba si hay un End of string y se imprime esa palabra 
 	if(this->root->children[26]->c==EOS){
-		v.push_back(maker_pair(aux,prefix));
+		v.push_back(make_pair(aux,prefix));
 		//cout<<prefix<<endl;
 	}
 	//en caso de que no queden nodos hijos correspondientes al prefijo se termina el metodo
