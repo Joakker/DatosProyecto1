@@ -25,7 +25,7 @@ void Predictor::suggestions(std::string prefix,int k){
 	if(t->isLastNode(this->root)){
 		sort(v.begin(),v.end());
 		for(int i=0;i<k;i++){
-			cout<<v[(v.size()-1)-i]<<endl;
+			cout<<v[(v.size()-1)-i].second()<<endl;
 		}
 		return;
 	}
