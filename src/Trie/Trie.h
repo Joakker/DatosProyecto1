@@ -22,7 +22,7 @@
             Trie();
             ~Trie();
             
-            void add_word(std::string, int);
+            void add_word(std::string);
             bool search(std::string);
             bool isLastNode(struct TrieNode* root);
             struct TrieNode* getNode();

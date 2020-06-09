@@ -1,12 +1,12 @@
 #include "../Trie/Trie.h"
-
 class Predictor{
 	private:
 		struct TrieNode* root;
 		Trie *t;
+		std::vector<std::pair<int,std::string>> v;
 	public:
 		Predictor(Trie* t);
 		~Predictor();
-		int printSuggestions(std::string);
-		void suggestions(std::string prefix);
+		void suggestions(std::string prefix,int k);
+		int printSuggestions(std::string prefix,int k);
 };
