@@ -1,4 +1,5 @@
 #include "../Trie/Trie.h"
+#include <bits/stdc++.h>
 class Predictor{
 	private:
 		struct TrieNode* root;
