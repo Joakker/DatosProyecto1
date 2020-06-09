@@ -25,7 +25,11 @@ Predictor::~Predictor(){
 //funcion recursiva para imprimir coincidencias con el prefijo especificado
 void Predictor::suggestions(std::string prefix,int k){
 	//se comprueba si hay un End of string y se imprime esa palabra 
+<<<<<<< HEAD
 	if(this->root->children[26] != NULL && this->root->children[26]->c==EOS){
+=======
+	if(this->root->children[26]->c==EOS){
+>>>>>>> e431dbe03d815ce6ef47f3e2102e1992dbedd527
 		v.push_back(make_pair(aux,prefix));
 		//cout<<prefix<<endl;
 	}

@@ -8,6 +8,7 @@ class Predictor{
 		Trie *t;
 		int aux;
 		std::vector<std::pair<int,std::string>> v;
+		int aux;
 	public:
 		Predictor(Trie* t);
 		~Predictor();
