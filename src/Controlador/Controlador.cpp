@@ -6,12 +6,11 @@
 Controlador::Controlador(std::string diccionario) {
     std::ifstream input(diccionario);
     std::string palabra;
-    int n;
     trie = new Trie();
-    //predictor = new Predictor();
-    while (input >> palabra >> n) {
-        trie->add_word(palabra, n);
+    while (input >> palabra) {
+        trie->add_word(palabra);
     }
+    predictor = new Predictor(trie);
 }
 
 
@@ -27,6 +26,6 @@ void Controlador::buscarCadenas(std::string input, std::string output, int k) {
     std::string palabra;
     
     while (cadenas >> palabra) {
-        std::cout << trie->search(palabra) << std::endl;
+        predictor->printSuggestions(palabra, k);
     }
 }
