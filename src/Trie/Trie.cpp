@@ -1,5 +1,6 @@
 #include "Trie.h"
-
+#include <time.h>
+#include <stdlib.h>
 
 #include <cstdlib>
 
@@ -25,9 +26,10 @@ Trie::~Trie() {
     free(root);
 }
 
-void Trie::add_word(std::string word, int n) {
+void Trie::add_word(std::string word) {
     struct TrieNode* aux = this->root;
-    
+    srand(time(NULL));
+    int n = rand()%1001;
     for (int i = 0; i < word.length(); i++) {
         int index = AS_INDEX(word[i]);
         
