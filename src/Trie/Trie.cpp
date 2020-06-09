@@ -66,9 +66,7 @@ bool Trie::isLastNode(struct TrieNode* root){
     }
     return false;
 }
-int getFrequency(){
-    return frequency;
-}
+
 struct TrieNode* Trie::getNode(){
     return this->root;
 }

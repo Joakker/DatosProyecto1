@@ -18,14 +18,14 @@ Predictor::~Predictor(){
 void Predictor::suggestions(std::string prefix,int k){
 	//se comprueba si hay un End of string y se imprime esa palabra 
 	if(this->root->children[26]->c==EOS){
-		v.push_back(maker_pair(aux,prefix));
+		v.push_back(make_pair(aux,prefix));
 		//cout<<prefix<<endl;
 	}
 	//en caso de que no queden nodos hijos correspondientes al prefijo se termina el metodo
 	if(t->isLastNode(this->root)){
 		sort(v.begin(),v.end());
 		for(int i=0;i<k;i++){
-			cout<<v[(v.size()-1)-i].second()<<endl;
+			cout<<v[(v.size()-1)-i].second<<endl;
 		}
 		return;
 	}
@@ -37,7 +37,7 @@ void Predictor::suggestions(std::string prefix,int k){
 			prefix.push_back('a'+i);
 			aux+=this->root->children[i]->frequency;
 			//se recurre nuevamente a la función
-			suggestions(prefix);
+			suggestions(prefix, k);
 			//se elimina el ultimo caracter
 			prefix.pop_back();
 			aux-=this->root->children[i]->frequency;
