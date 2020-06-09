@@ -9,7 +9,15 @@ using namespace std;
 Predictor::Predictor(Trie* t){
 	this->t = t;
 	this->root = this->t->getNode();
-	aux=0; 
+	aux = 0; 
+}
+
+bool cmp(pair<int,string> a1, pair<int,string> a2) {
+	if (a1.first > a2.first) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 Predictor::~Predictor(){
@@ -18,15 +26,25 @@ Predictor::~Predictor(){
 //funcion recursiva para imprimir coincidencias con el prefijo especificado
 void Predictor::suggestions(std::string prefix,int k){
 	//se comprueba si hay un End of string y se imprime esa palabra 
+<<<<<<< HEAD
+	if(this->root->children[26] != NULL && this->root->children[26]->c==EOS){
+=======
 	if(this->root->children[26]->c==EOS){
+>>>>>>> e431dbe03d815ce6ef47f3e2102e1992dbedd527
 		v.push_back(make_pair(aux,prefix));
 		//cout<<prefix<<endl;
 	}
 	//en caso de que no queden nodos hijos correspondientes al prefijo se termina el metodo
 	if(t->isLastNode(this->root)){
+<<<<<<< HEAD
 		sort(v.begin(),v.end());
 		for(int i=0;i<k;i++){
 			cout<<v[(v.size()-1)-i].second<<endl;
+=======
+		sort(v.begin(),v.end(), cmp);
+		for (int i = 0; i < k; i++) {
+			cout << v[i].second << endl;
+>>>>>>> aa9e7a9c6f6151e19d7351bdb24428bac6d8dba6
 		}
 		return;
 	}
@@ -38,7 +56,11 @@ void Predictor::suggestions(std::string prefix,int k){
 			prefix.push_back('a'+i);
 			aux+=this->root->children[i]->frequency;
 			//se recurre nuevamente a la función
+<<<<<<< HEAD
 			suggestions(prefix,k);
+=======
+			suggestions(prefix, k);
+>>>>>>> aa9e7a9c6f6151e19d7351bdb24428bac6d8dba6
 			//se elimina el ultimo caracter
 			prefix.pop_back();
 			aux-=this->root->children[i]->frequency;
@@ -57,15 +79,20 @@ int Predictor::printSuggestions(std::string prefix,int k){
 	}
 	bool isLast= t->isLastNode(aux);
 	//si la palabra esta presente, pero no hay más coincidencias, se retorna -1
+<<<<<<< HEAD
 	if(aux->children[26]->c==EOS&&isLast){
 		cout<<prefix<<endl;
+=======
+	if(aux->children[26]->c == EOS && isLast){
+		cout<< prefix << endl;
+>>>>>>> aa9e7a9c6f6151e19d7351bdb24428bac6d8dba6
 		return -1;
 	}
 	//si el prefijo esta presente y tiene más nodos debajo, se retorna 1, y se llama a la funcion suggestions
-	if(!isLast){
+	if(!isLast) {
 		suggestions(prefix,k);
 		return 1;
 	}
-
+	return 0;
 }
 
