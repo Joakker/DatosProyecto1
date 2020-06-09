@@ -7,5 +7,6 @@ class Predictor{
 	public:
 		Predictor(Trie* t);
 		~Predictor();
+		int printSuggestions(std::string);
 		void suggestions(std::string prefix);
 };
