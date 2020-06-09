@@ -66,10 +66,6 @@ bool Trie::isLastNode(struct TrieNode* root){
     }
     return false;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> aa9e7a9c6f6151e19d7351bdb24428bac6d8dba6
 struct TrieNode* Trie::getNode(){
     return this->root;
 }
