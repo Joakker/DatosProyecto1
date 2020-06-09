@@ -8,7 +8,15 @@ using namespace std;
 Predictor::Predictor(Trie* t){
 	this->t = t;
 	this->root = this->t->getNode();
-	aux=0; 
+	aux = 0; 
+}
+
+bool cmp(pair<int,string> a1, pair<int,string> a2) {
+	if (a1.first > a2.first) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
 Predictor::~Predictor(){
@@ -17,15 +25,15 @@ Predictor::~Predictor(){
 //funcion recursiva para imprimir coincidencias con el prefijo especificado
 void Predictor::suggestions(std::string prefix,int k){
 	//se comprueba si hay un End of string y se imprime esa palabra 
-	if(this->root->children[26]->c==EOS){
+	if(this->root->children[26] != NULL && this->root->children[26]->c==EOS){
 		v.push_back(make_pair(aux,prefix));
 		//cout<<prefix<<endl;
 	}
 	//en caso de que no queden nodos hijos correspondientes al prefijo se termina el metodo
 	if(t->isLastNode(this->root)){
-		sort(v.begin(),v.end());
-		for(int i=0;i<k;i++){
-			cout<<v[(v.size()-1)-i].second<<endl;
+		sort(v.begin(),v.end(), cmp);
+		for (int i = 0; i < k; i++) {
+			cout << v[i].second << endl;
 		}
 		return;
 	}
@@ -57,14 +65,14 @@ int Predictor::printSuggestions(std::string prefix,int k){
 	bool isLast= t->isLastNode(aux);
 	//si la palabra esta presente, pero no hay más coincidencias, se retorna -1
 	if(aux->children[26]->c == EOS && isLast){
-		cout<<prefix<<endl;
+		cout<< prefix << endl;
 		return -1;
 	}
 	//si el prefijo esta presente y tiene más nodos debajo, se retorna 1, y se llama a la funcion suggestions
-	if(!isLast){
+	if(!isLast) {
 		suggestions(prefix,k);
 		return 1;
 	}
-
+	return 0;
 }
 
